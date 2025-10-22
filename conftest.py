@@ -33,7 +33,11 @@ def driver(platform):
     else:
         raise ValueError(f"Unsupported platform: {platform}. Must be 'android' or 'ios'.")
 
-    driver = webdriver.Remote("http://127.0.0.1:4723", options=options)
+    # driver = webdriver.Remote("http://127.0.0.1:4723", options=options)
+    driver = webdriver.Remote(
+        "http://hub.browserstack.com/wd/hub",
+        options=options
+    )
     yield driver
     driver.quit()
 
