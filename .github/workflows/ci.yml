@@ -31,17 +31,17 @@ jobs:
       - name: Run Android Emulator
         uses: reactivecircus/android-emulator-runner@v2
         with:
-          api-level: 30
+          api-level: 28
           target: google_apis
           arch: x86_64
           profile: pixel_4
+          emulator-options: -no-snapshot -no-window -gpu swiftshader_indirect -accel off -netdelay none -netspeed full
           script: |
-            adb devices
+            adb wait-for-device
             adb shell getprop sys.boot_completed
-            echo "Emulator started"
-            npm install -g appium
-            appium --log-level error &
+            echo "Emulator ready"
             pytest --html=reports/report.html --self-contained-html
+      
 
       # 5. Upload pytest-html report
       - name: Upload test report
