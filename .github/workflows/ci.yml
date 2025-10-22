@@ -27,21 +27,30 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      # 4. Run Android Emulator and tests
+      # 4. Launch Android emulator
       - name: Run Android Emulator
         uses: reactivecircus/android-emulator-runner@v2
         with:
-          api-level: 28
+          api-level: 30
           target: google_apis
           arch: x86_64
           profile: pixel_4
-          emulator-options: -no-snapshot -no-window -gpu swiftshader_indirect -accel off -netdelay none -netspeed full
+          emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim -accel off
+          disable-animations: true
+          boot-timeout: 600
           script: |
+            adb devices
+            echo "Waiting for emulator to fully boot..."
             adb wait-for-device
-            adb shell getprop sys.boot_completed
-            echo "Emulator ready"
+            adb shell 'while [[ -z $(getprop sys.boot_completed) ]]; do sleep 5; done'
+            echo "Emulator booted"
+
+            # Start Appium in background
+            npm install -g appium
+            appium --log-level error &
+
+            # Run tests
             pytest --html=reports/report.html --self-contained-html
-      
 
       # 5. Upload pytest-html report
       - name: Upload test report
