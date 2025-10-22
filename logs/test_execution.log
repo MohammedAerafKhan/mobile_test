@@ -1,0 +1,7 @@
+2025-10-22 07:32:18 - INFO - TestLogger - Starting add remove from cart test
+2025-10-22 07:32:21 - INFO - TestLogger - Navigated to Login Page
+2025-10-22 07:32:23 - INFO - TestLogger - Login submitted with test credentials
+2025-10-22 07:32:23 - INFO - TestLogger - Landing page loaded successfully
+2025-10-22 07:32:24 - INFO - TestLogger - Selected first product
+2025-10-22 07:32:26 - INFO - TestLogger - Product added to cart and navigated to cart page
+2025-10-22 07:32:28 - INFO - TestLogger - Checkout flow test completed successfully
