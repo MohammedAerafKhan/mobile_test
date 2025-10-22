@@ -27,7 +27,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      # 4. Launch Android emulator
       - name: Run Android Emulator
         uses: reactivecircus/android-emulator-runner@v2
         with:
@@ -40,7 +39,7 @@ jobs:
           boot-timeout: 600
           script: |
             adb devices
-            echo "Waiting for emulator to fully boot..."
+            echo "Waiting for emulator..."
             adb wait-for-device
             adb shell 'while [[ -z $(getprop sys.boot_completed) ]]; do sleep 5; done'
             echo "Emulator booted"
@@ -51,6 +50,7 @@ jobs:
 
             # Run tests
             pytest --html=reports/report.html --self-contained-html
+
 
       # 5. Upload pytest-html report
       - name: Upload test report
