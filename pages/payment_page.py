@@ -17,7 +17,7 @@ class PaymentPage(BasePage):
         self.utils.type(self.get_locator("payment_page_cvv"), cvv)
 
         # Click and scroll
-        self.utils.click(self.get_locator("payment_page_checkout_title"))
+        self.utils.click(self.get_locator("payment_page_expiration_title"))
         self.utils.scroll_to_element(self.get_locator("payment_page_continue_button"))
 
         self.utils.click(self.get_locator("payment_page_continue_button"))

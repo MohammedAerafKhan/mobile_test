@@ -22,13 +22,13 @@ class CheckoutPage(BasePage):
         self.utils.type(self.get_locator("checkout_page_postal_code"), postal_code)
 
         # Click and scroll
-        self.utils.click(self.get_locator("checkout_page_checkout_title"))
+        self.utils.click(self.get_locator("checkout_page_city_title"))
         self.utils.scroll_to_element(self.get_locator("checkout_page_continue_button"))
 
         self.utils.type(self.get_locator("checkout_page_country"), country)
 
         # Click and scroll
-        self.utils.click(self.get_locator("checkout_page_checkout_title"))
+        self.utils.click(self.get_locator("checkout_page_city_title"))
         self.utils.scroll_to_element(self.get_locator("checkout_page_continue_button"))
 
         self.utils.click(self.get_locator("checkout_page_continue_button"))
