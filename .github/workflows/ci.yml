@@ -1,60 +1,37 @@
-name: Android UI Tests
+name: Run Android Tests on Sauce Labs
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ main ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ main ]
 
 jobs:
-  tests:
+  android-tests:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout your repo
-      - name: Checkout
+      - name: Checkout repo
         uses: actions/checkout@v3
 
-      # 2. Set up Python
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10'
+          python-version: "3.10"
 
-      # 3. Install dependencies
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run Android Emulator
-        uses: reactivecircus/android-emulator-runner@v2
-        with:
-          api-level: 30
-          target: google_apis
-          arch: x86_64
-          profile: pixel_4
-          emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim -accel off
-          disable-animations: true
-          boot-timeout: 600
-          script: |
-            adb devices
-            echo "Waiting for emulator..."
-            adb wait-for-device
-            adb shell 'while [[ -z $(getprop sys.boot_completed) ]]; do sleep 5; done'
-            echo "Emulator booted"
+      - name: Run Android tests on Sauce Labs
+        env:
+          SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
+          SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
+        run: |
+          pytest -v --platform=android --target=sauce --html=reports/report.html --self-contained-html
 
-            # Start Appium in background
-            npm install -g appium
-            appium --log-level error &
-
-            # Run tests
-            pytest --html=reports/report.html --self-contained-html
-
-
-      # 5. Upload pytest-html report
       - name: Upload test report
         uses: actions/upload-artifact@v4
         with:
-          name: pytest-report
+          name: android-test-report
           path: reports/report.html

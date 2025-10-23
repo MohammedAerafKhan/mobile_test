@@ -6,6 +6,7 @@ class ProductPage(BasePage):
         super().__init__(driver, locators)
 
     def add_to_cart(self):
+        self.utils.scroll_to_element(self.get_locator("product_page_add_to_cart_button"))
         self.utils.click(self.get_locator("product_page_add_to_cart_button"))
         return self
 

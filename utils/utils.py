@@ -22,3 +22,20 @@ class DriverUtils:
 
     def is_visible(self, locator):
         return self.wait.until(EC.visibility_of_element_located(locator)).is_displayed()
+
+    def scroll_to_element(self, locator, max_swipes=5):
+        for _ in range(max_swipes):
+            try:
+                element = self.wait.until(EC.presence_of_element_located(locator))
+                if element.is_displayed():
+                    return element
+            except:
+                self._swipe_up()
+        raise Exception(f"Element {locator} not found after scrolling")
+
+    def _swipe_up(self):
+        size = self.driver.get_window_size()
+        start_y = int(size["height"] * 0.8)
+        end_y = int(size["height"] * 0.3)
+        x = int(size["width"] / 2)
+        self.driver.swipe(x, start_y, x, end_y, 800)

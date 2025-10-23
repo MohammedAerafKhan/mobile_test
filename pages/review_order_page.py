@@ -6,5 +6,6 @@ class ReviewOrderPage(BasePage):
         super().__init__(driver, locators)
 
     def place_order(self):
+        self.utils.scroll_to_element(self.get_locator("review_order_page_place_order_button"))
         self.utils.click(self.get_locator("review_order_page_place_order_button"))
         return CheckoutCompletePage(self.driver, self.locators)

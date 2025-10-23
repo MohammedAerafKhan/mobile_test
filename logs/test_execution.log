@@ -1,7 +1,19 @@
-2025-10-22 07:32:18 - INFO - TestLogger - Starting add remove from cart test
-2025-10-22 07:32:21 - INFO - TestLogger - Navigated to Login Page
-2025-10-22 07:32:23 - INFO - TestLogger - Login submitted with test credentials
-2025-10-22 07:32:23 - INFO - TestLogger - Landing page loaded successfully
-2025-10-22 07:32:24 - INFO - TestLogger - Selected first product
-2025-10-22 07:32:26 - INFO - TestLogger - Product added to cart and navigated to cart page
-2025-10-22 07:32:28 - INFO - TestLogger - Checkout flow test completed successfully
+2025-10-23 13:22:04 - INFO - TestLogger - Starting add remove from cart test
+2025-10-23 13:22:25 - INFO - TestLogger - Navigated to Login Page
+2025-10-23 13:22:44 - INFO - TestLogger - Login submitted with test credentials
+2025-10-23 13:22:44 - INFO - TestLogger - Landing page loaded successfully
+2025-10-23 13:22:47 - INFO - TestLogger - Selected first product
+2025-10-23 13:23:07 - INFO - TestLogger - Product added to cart and navigated to cart page
+2025-10-23 13:23:15 - INFO - TestLogger - Checkout flow test completed successfully
+2025-10-23 13:24:21 - INFO - TestLogger - Starting Checkout Flow Test
+2025-10-23 13:24:44 - INFO - TestLogger - Navigated to Login Page
+2025-10-23 13:25:05 - INFO - TestLogger - Login submitted with test credentials
+2025-10-23 13:25:05 - INFO - TestLogger - Landing page loaded successfully
+2025-10-23 13:25:07 - INFO - TestLogger - Selected first product
+2025-10-23 13:25:28 - INFO - TestLogger - Product added to cart and navigated to cart page
+2025-10-23 13:25:29 - INFO - TestLogger - Proceeded to checkout
+2025-10-23 13:25:58 - INFO - TestLogger - Filled user details
+2025-10-23 13:26:25 - INFO - TestLogger - Entered payment details
+2025-10-23 13:26:27 - INFO - TestLogger - Placed the order
+2025-10-23 13:26:28 - INFO - TestLogger - Continued shopping after order completion
+2025-10-23 13:26:30 - INFO - TestLogger - Checkout flow test completed successfully

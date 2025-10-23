@@ -7,6 +7,7 @@ class LandingPage(BasePage):
     def go_to_login(self):
         from pages.login_page import LoginPage
         self.utils.click(self.get_locator("landing_page_menu_btn"))
+        self.utils.scroll_to_element(self.get_locator("landing_page_login_menu_item"))
         self.utils.click(self.get_locator("landing_page_login_menu_item"))
         return LoginPage(self.driver, self.locators)
 
