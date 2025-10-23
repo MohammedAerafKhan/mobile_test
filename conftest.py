@@ -61,11 +61,11 @@ def driver(platform, target, request):
     # Pick capabilities based on flags
     if platform == "android" and target == "local":
         options = get_local_android_options()
-        url = "http://127.0.0.1:4723/wd/hub"
+        url = "http://127.0.0.1:4723"
 
     elif platform == "ios" and target == "local":
         options = get_local_ios_options()
-        url = "http://127.0.0.1:4723/wd/hub"
+        url = "http://127.0.0.1:4723"
 
     elif platform == "android" and target == "sauce":
         options = get_sauce_android_options()
