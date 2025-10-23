@@ -72,7 +72,7 @@ def get_sauce_android_options():
         "sauce:options": {
             "username": SAUCE_USERNAME,
             "accessKey": SAUCE_ACCESS_KEY,
-            "build": "appium-build-android",
+            "build": "appium-build-android-final",
             "name": "Android Checkout Flow",
             "deviceOrientation": "PORTRAIT"
         }
@@ -86,11 +86,11 @@ def get_sauce_ios_options():
         "appium:platformVersion": "16",
         "appium:deviceName": "iPhone 14 Simulator",
         "appium:automationName": "XCUITest",
-        "appium:app": "storage:filename=MyDemoApp.zip",
+        "appium:app": "storage:filename=SauceLabs-Demo-App-Runner.Simulator.XCUITest.zip",
         "sauce:options": {
             "username": SAUCE_USERNAME,
             "accessKey": SAUCE_ACCESS_KEY,
-            "build": "appium-build-ios",
+            "build": "appium-build-ios-final",
             "name": "iOS Checkout Flow",
             "deviceOrientation": "PORTRAIT"
         }
