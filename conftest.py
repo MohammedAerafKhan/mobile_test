@@ -11,6 +11,8 @@ Key Features:
 - Driver fixture that dynamically configures and launches an Appium driver.
 - Integration with Sauce Labs to report job pass/fail status.
 - Hook implementation to capture test outcomes.
+
+Author: Mohammed Aeraf Khan
 """
 
 import pytest
