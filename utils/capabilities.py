@@ -50,10 +50,10 @@ def get_local_android_options():
 def get_local_ios_options():
     options = XCUITestOptions().load_capabilities({
         "platformName": "iOS",
-        "platformVersion": "16.0",
-        "deviceName": "iPhone 14 Pro",
+        "platformVersion": "26.0",
+        "deviceName": "iPhone 17 Pro",
         "automationName": "XCUITest",
-        "app": "/Users/aerafkhan/Library/Developer/Xcode/DerivedData/My_Demo_App/Build/Products/Debug-iphonesimulator/My Demo App.app",
+        "app": "/Users/aerafkhan/Library/Developer/Xcode/DerivedData/My_Demo_App-bftxznsdkfiecjhlchguqckvrlzr/Build/Products/Debug-iphonesimulator/My Demo App.app",
         "newCommandTimeout": 300,
         "connectHardwareKeyboard": True
     })
