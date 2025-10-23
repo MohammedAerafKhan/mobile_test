@@ -1,7 +1,24 @@
+"""
+utils.py
+--------
+Contains the `DriverUtils` class, which wraps common Selenium/Appium
+interactions with built-in waiting mechanisms for reliability.
+
+Key Features:
+- Encapsulates element interactions like click, type, visibility checks.
+- Provides explicit waits to handle dynamic UI elements.
+- Includes functionality for swipe/scroll to locate elements.
+"""
+
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 class DriverUtils:
+    """
+    Utility wrapper for WebDriver to simplify element interactions
+    with built-in waits and retry mechanisms.
+    """
+
     def __init__(self, driver, timeout=15):
         self.driver = driver
         self.wait = WebDriverWait(driver, timeout)

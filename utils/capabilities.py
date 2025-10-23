@@ -1,3 +1,27 @@
+"""
+capabilities.py
+---------------
+This module centralizes the definition of Appium capabilities for both local
+and remote (Sauce Labs) test execution. It allows switching between Android
+and iOS platforms as well as execution targets with minimal changes.
+
+Environment:
+- Reads Sauce Labs credentials (`SAUCE_USERNAME`, `SAUCE_ACCESS_KEY`)
+  from a `.env` file using `python-dotenv`.
+
+Key Features:
+- Provides local capabilities for Android (UiAutomator2) and iOS (XCUITest).
+- Provides Sauce Labs capabilities for Android and iOS.
+- Encapsulates configuration logic in functions for easier reuse.
+
+Usage Example:
+--------------
+```python
+from utils.capabilities import get_local_android_options
+driver = webdriver.Remote("http://127.0.0.1:4723/wd/hub", options=get_local_android_options())
+"""
+
+
 from appium.options.android import UiAutomator2Options
 from appium.options.ios import XCUITestOptions
 import os

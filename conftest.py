@@ -1,3 +1,18 @@
+"""
+conftest.py
+-----------
+This file configures pytest for running Appium-based mobile automation tests.
+It provides command-line options, fixtures, and hooks to manage test execution
+on both Android and iOS platforms, supporting both local and Sauce Labs targets.
+
+Key Features:
+- Custom pytest options for selecting platform and target (`--platform`, `--target`).
+- Session-level fixtures for platform, target, and locator loading.
+- Driver fixture that dynamically configures and launches an Appium driver.
+- Integration with Sauce Labs to report job pass/fail status.
+- Hook implementation to capture test outcomes.
+"""
+
 import pytest
 from appium import webdriver
 from utils.capabilities import (

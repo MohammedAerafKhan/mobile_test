@@ -1,3 +1,15 @@
+"""
+logger.py
+---------
+Provides a centralized logging utility for test execution.
+Logs are written to both the console and a rotating file.
+
+Key Features:
+- Ensures logs directory is available.
+- Logs INFO level to console and DEBUG level to file.
+- Supports consistent formatting for timestamps, levels, and messages.
+"""
+
 import logging
 import os
 
